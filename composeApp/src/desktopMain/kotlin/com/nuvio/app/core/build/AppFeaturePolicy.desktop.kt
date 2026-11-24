@@ -13,8 +13,9 @@ actual object AppFeaturePolicy {
     actual val debridEnabled: Boolean = true
     actual val addonStreamSourcesEnabled: Boolean = true
     actual val supportersContributorsPageEnabled: Boolean = false
-    // Upstream custom-server + donation flags the fork does not use (fork = SyncBackend + its own
-    // Donate row via DONATIONS_DONATE_URL); kept off.
+    // Donations stay fork-owned (DONATIONS_DONATE_URL), but the built-in custom-server UI is on:
+    // it is the entry point for pointing the desktop app at a self-hosted sync server (discovery
+    // via /.well-known/nuvio), which is how sensitive sync data stays fully under the user's control.
     actual val donationActionsEnabled: Boolean = false
     actual val donationProgressEnabled: Boolean = false
     actual val accountDeletionEnabled: Boolean = false
@@ -31,5 +32,5 @@ actual object AppFeaturePolicy {
     actual val downloadForegroundServiceEnabled: Boolean = false
     /** Build flavor reported in analytics as `build_flavor`: "full" (sideload) or "store" (Play / App Store). */
     actual val buildFlavor: String = "full"
-    actual val customServerConnectionsEnabled: Boolean = false
+    actual val customServerConnectionsEnabled: Boolean = true
 }
