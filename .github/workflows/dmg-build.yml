@@ -9,15 +9,14 @@ on:
 permissions:
   contents: read
 
-concurrency:
-  group: dmg-build-${{ github.ref }}-${{ matrix.arch }}
-  cancel-in-progress: true
-
 jobs:
   dmg:
     name: macOS ${{ matrix.arch }} DMG (unsigned test build)
     runs-on: ${{ matrix.runner }}
     timeout-minutes: 120
+    concurrency:
+      group: dmg-build-${{ github.ref }}-${{ matrix.arch }}
+      cancel-in-progress: true
     strategy:
       fail-fast: false
       matrix:
