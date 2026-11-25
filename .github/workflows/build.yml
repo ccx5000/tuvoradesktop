@@ -6,6 +6,9 @@ name: Build
 # Run this by hand when you want a pre-release compile/test check.
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/build.yml']
     inputs:
       linux_packages:
         description: Also build the Linux DEB + AppImage (the release packaging path, ~15 min)
