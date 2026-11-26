@@ -1,7 +1,7 @@
 name: Build
 
 # Compiles the desktop JVM target and runs the desktop unit tests ON DEMAND ONLY
-# (Actions tab -> Run workflow). Deliberately NOT run on every push to main or on PRs — that
+# Compiles the desktop JVM target. Privacy rebuild: rec-events off by default (linux package job).
 # burned CI minutes on every commit; release builds are owned by release.yml (tag push).
 # Run this by hand when you want a pre-release compile/test check.
 on:

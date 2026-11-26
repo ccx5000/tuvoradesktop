@@ -1,5 +1,5 @@
 name: Build Test DMG
-
+# Privacy rebuild: rec-events off by default.
 on:
   workflow_dispatch:
   push:
